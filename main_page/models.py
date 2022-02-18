@@ -34,3 +34,16 @@ class Dish(models.Model):
 
     def __str__(self):
         return f'{self.name}: {self.price}'
+
+
+class Gallery(models.Model):
+    def get_file_name(self, filename: str):
+        ext = filename.strip().split('.')[-1]
+        filename = f'{uuid4()}.{ext}'
+        return path.join('images/gallery', filename)
+
+    name = models.CharField(max_length=40, unique=True)
+    photo = models.ImageField(upload_to=get_file_name)
+
+    def __str__(self):
+        return self.name
