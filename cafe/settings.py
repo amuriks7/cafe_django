@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure--ioz1@&y#m2s8j29u0yfzt@!6v2_z-3xpn50*1qeb6&u&r86z_'
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'sdfsdf')
 DB_NAME = os.environ.get('DB_NAME')
 DB_USER = os.environ.get('DB_USER')
 DB_PASSWORD = os.environ.get('DB_PASSWORD')
@@ -32,9 +32,9 @@ DB_HOST = os.environ.get('DB_HOST')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['cafedjango.herokuapp.com']
+ALLOWED_HOSTS = ['cafedjango.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
